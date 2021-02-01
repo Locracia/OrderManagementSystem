@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyShopDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nchar" MaxLength="10" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'MyShopDB.dbo.tbl_Orders' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tbl_Orders">
+          <Property Name="OrderNum" Type="nchar" MaxLength="10" />
+          <Property Name="OrderItem" Type="nchar" MaxLength="10" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityContainer Name="MyShopDBModelStoreContainer">
+    <EntitySet Name="tbl_Customers" EntityType="Self.tbl_Customers" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
